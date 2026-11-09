@@ -1,0 +1,11 @@
+# Documentos de apoio (entregues separadamente)
+ROTEIRO_AUDIOS.md
+CHECKLIST_ACESSIBILIDADE.md
+INSTALACAO.md
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.claude/
