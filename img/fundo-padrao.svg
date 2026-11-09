@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260">
+  <!-- Padrão de alimentos em traço cartoon, bem suave, para repetir no fundo -->
+  <g stroke="#4A2C17" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.3">
+    <g transform="translate(40 42) rotate(-12)">
+      <path d="M0 6 C-16 -6 -26 12 -20 26 C-15 38 -6 40 0 36 C6 40 15 38 20 26 C26 12 16 -6 0 6 Z" fill="#F28B82"/>
+      <path d="M0 6 L2 -6" fill="none"/>
+      <path d="M2 -4 C8 -12 16 -10 18 -6 C12 -2 6 -2 2 -4 Z" fill="#9CCC65"/>
+    </g>
+    <g transform="translate(170 36)">
+      <circle cx="0" cy="12" r="20" fill="#FFB74D"/>
+      <path d="M-4 -6 C-2 -12 6 -14 10 -10 C6 -6 0 -5 -4 -6 Z" fill="#9CCC65"/>
+    </g>
+    <g transform="translate(108 128) rotate(8)">
+      <path d="M-34 8 C-34 -14 34 -14 34 8 C34 18 -34 18 -34 8 Z" fill="#E0B07A"/>
+      <path d="M-14 -4 L-8 6 M0 -6 L6 4 M14 -4 L20 6" fill="none"/>
+    </g>
+    <g transform="translate(222 140) rotate(30)">
+      <path d="M-8 -18 L8 -18 L0 28 Z" fill="#FF9F68"/>
+      <path d="M-4 -18 L-10 -32 M0 -18 L0 -34 M4 -18 L10 -32" fill="none" stroke="#7CB342"/>
+      <path d="M-5 -6 L1 -6 M-3 6 L3 6" fill="none"/>
+    </g>
+    <g transform="translate(36 196) rotate(-20)">
+      <path d="M0 -26 C22 -18 26 10 0 26 C-26 10 -22 -18 0 -26 Z" fill="#AED581"/>
+      <path d="M0 -20 L0 22 M0 -4 L-10 -12 M0 6 L10 -2" fill="none"/>
+    </g>
+    <g transform="translate(160 218)">
+      <circle cx="0" cy="4" r="18" fill="#EF9A9A"/>
+      <path d="M-10 -12 L0 -6 L10 -12 M0 -6 L0 -16" fill="none" stroke="#7CB342"/>
+    </g>
+    <g transform="translate(236 232) rotate(-25)">
+      <path d="M-26 -6 C-14 14 14 14 26 -6 C14 4 -14 4 -26 -6 Z" fill="#FFE082"/>
+    </g>
+    <circle cx="96" cy="58" r="4" fill="#90CAF9"/>
+    <circle cx="232" cy="90" r="3" fill="#A5D6A7"/>
+    <circle cx="80" cy="236" r="4" fill="#FFCC80"/>
+    <path d="M100 196 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 Z" fill="#FFE082"/>
+    <path d="M14 112 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2 Z" fill="#90CAF9"/>
+  </g>
+</svg>

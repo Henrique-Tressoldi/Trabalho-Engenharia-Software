@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="260" viewBox="0 0 1600 260" preserveAspectRatio="none">
+  <!-- Colinas verdes em estilo cartoon para a base das telas -->
+  <path d="M0 120 C200 40 380 60 560 110 C760 165 900 70 1100 80 C1300 90 1450 150 1600 100 L1600 260 L0 260 Z"
+        fill="#B9DFB0" stroke="#4A2C17" stroke-width="5" stroke-opacity="0.5"/>
+  <path d="M0 180 C180 130 360 140 520 175 C700 215 860 140 1060 150 C1260 160 1420 210 1600 170 L1600 260 L0 260 Z"
+        fill="#92CC8A" stroke="#4A2C17" stroke-width="5" stroke-opacity="0.5"/>
+</svg>
