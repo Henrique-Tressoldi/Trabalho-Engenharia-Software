@@ -567,7 +567,7 @@
       sessao = novaSessao();
       App.finalizarPartida();
       var aluno = (App.state && App.state.aluno) || { nome: '' };
-      var tela = criarTela('tela--creme');
+      var tela = criarTela('tela--creme tela--fim');
       var resumo = criarResumo();
       var botoes = criarBotoesFinais();
       tela.appendChild(criarConfete());

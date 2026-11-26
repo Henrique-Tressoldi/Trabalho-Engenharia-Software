@@ -495,6 +495,9 @@ button:focus-visible {
 .resumo-atitudes .card-opcao { min-width: 0; width: auto; padding: 12px; }
 .resumo-atitudes .rotulo { font-size: 20px; overflow-wrap: anywhere; }
 
+/* Mantém os controles finais acima da legenda fixa. */
+.tela--fim { padding-bottom: 130px; }
+
 /* ---------- Confete ---------- */
 .confete {
   position: fixed;
@@ -652,6 +655,20 @@ button:focus-visible {
   .card-opcao img { height: 170px; }
   .card-opcao .cena-emoji { line-height: 170px; height: 170px; }
   .quadro-abertura img { height: 45vh; }
+}
+
+/* O encerramento precisa caber junto da legenda em telas como 1280 x 800. */
+@media (max-height: 850px) and (min-width: 901px) {
+  .tela--fim {
+    gap: 12px;
+    padding-top: 16px;
+    padding-bottom: 120px;
+  }
+
+  .tela--fim > img { max-height: 12vh; }
+  .tela--fim .resumo-atitudes { gap: 12px; }
+  .tela--fim .resumo-atitudes > * { gap: 6px; padding: 8px; }
+  .tela--fim .resumo-atitudes img { height: min(100px, 12vh); }
 }
 
 /* Movimento reduzido */

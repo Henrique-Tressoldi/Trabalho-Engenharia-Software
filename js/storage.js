@@ -149,8 +149,7 @@
     // Cada aluno joga 2 vezes; a segunda com menos erros (evolução).
     var plano = [[0, 13, 0.5], [0, 4, 0.2], [1, 11, 0.6], [1, 2, 0.35], [2, 9, 0.3], [2, 1, 0.1]];
     var partidas = plano.map(function (p) { return partidaExemplo(alunos[p[0]], p[1], p[2]); });
-    var dados = ler();
-    gravar({ alunos: dados.alunos.concat(alunos), partidas: dados.partidas.concat(partidas) });
+    gravar({ alunos: alunos, partidas: partidas });
   }
 
   window.Repo = Object.freeze({
