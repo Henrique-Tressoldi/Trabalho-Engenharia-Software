@@ -112,6 +112,7 @@ python -m http.server 8000
 - No máximo **2 opções** ou **6 itens** por tela; palavra sempre **abaixo da imagem**.
 - Sem cores fortes e sem sustos; erro com retorno calmo e nova tentativa, sem game over.
 - Dica piscando após **10 s** sem ação ou no **2º erro**. Só clique ou toque.
+- **A Fase 1 é um tutorial de aprendizagem sem erro** (*errorless learning*; Mueller, Palkovic e Maynard, 2007): a cesta aceita só a quantidade pedida e cada toque é contado em voz alta, para o aluno praticar a contagem de 1 a 5 sempre com o modelo certo. O único erro registrado é tocar com a cesta cheia. A Fase 2 é a etapa de aplicação, em que o aluno pode errar e tenta de novo.
 
 ## Fluxo de telas
 
@@ -208,7 +209,6 @@ Os testes são manuais, no Chrome e no Edge, em computador e tablet. O projeto n
 
 Outras limitações:
 
-- Na Fase 1 o aluno não consegue errar a contagem: a cesta só aceita a quantidade pedida, e o único erro registrado é tocar com ela cheia.
 - JOGAR DE NOVO e SAIR fazem a mesma coisa (voltam ao início).
 - A partida é salva ao escolher o aluno; partidas abandonadas aparecem no Relatório 1 sem rodadas.
 - Na situação 1 da Fase 2, "2 pessoas" e "5 pratos" usam emojis no lugar de fotos.
@@ -216,7 +216,7 @@ Outras limitações:
 ## Trabalhos futuros
 
 - Permitir que a professora troque a senha e guardá-la como hash, fora do código.
-- Na Fase 1, deixar o aluno decidir quando a cesta está completa, para medir a contagem de fato.
+- Depois do tutorial da Fase 1, acrescentar um nível de desafio em que o próprio aluno decide quando a cesta está completa, para medir a contagem sem apoio.
 - Trocar os emojis da situação 1 por fotos reais.
 - Aplicar os formulários ISO/IEC 25010 com alunos e professores da ASSARTE.
 - Criar testes automatizados para `calcularRelatorio1` e `calcularRelatorio2`.
