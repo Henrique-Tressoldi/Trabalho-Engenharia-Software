@@ -20,7 +20,34 @@ A professora tem uma área com senha para cadastrar alunos, ver os relatórios e
 | Andrey F. de Lima | Scrum Master / desenvolvimento da lógica e relatórios |
 | Henrique Tressoldi | Desenvolvimento das telas |
 | José Ricardo Baptista | Conteúdo, áudio e imagens |
-| Christopher | Qualidade e documentação |
+| Christopher Gomes | Qualidade e documentação |
+
+**Professora (cliente):** Eliana C. M. Ishikawa · **Estudo de caso:** ASSARTE – Associação Artesanal do Excepcional de Ponta Grossa.
+
+| Marco | Data |
+|---|---|
+| Entrega da documentação e do jogo (Moodle) | 26/11/2026 |
+| Apresentação | 30/11/2026 |
+
+## Metodologia
+
+Scrum com sprints de uma semana. O quadro Kanban (Backlog, A fazer, Fazendo, Em revisão, Feito) é a ferramenta visual da sprint, com no máximo 3 tarefas em "Fazendo" por pessoa.
+
+| Cerimônia | Quando | Duração |
+|---|---|---|
+| Planejamento da sprint | 1ª reunião da semana | até 1 h |
+| Daily | Todo dia, em horário fixo | 20 min |
+| Revisão da sprint | Fim da sprint | 30 min |
+| Retrospectiva | Após a revisão | 15 min |
+
+| Sprint | Período | Entregas |
+|---|---|---|
+| 0 | 26/10 a 03/11 | Roteiro; Plano de Projeto e Análise de Riscos |
+| 1 | 04/11 a 10/11 | Metodologia, requisitos e sistemas similares; telas inicial, escolha do aluno e abertura |
+| 2 | 11/11 a 17/11 | Documento de requisitos, casos de uso e protótipo; Fase 1; registro de resultados |
+| 3 | 18/11 a 24/11 | Fase 2, transição e encerramento; área da professora; formulário ISO/IEC 25010; testes |
+| 4 | 25/11 a 26/11 | Correções finais e entrega no Moodle |
+| 5 | 27/11 a 30/11 | Ensaio e apresentação |
 
 ## Como rodar
 
@@ -101,6 +128,98 @@ flowchart LR
   fim -->|JOGAR DE NOVO| inicio
   fim -->|SAIR| inicio
 ```
+
+## Casos de uso
+
+| Ator | Casos de uso |
+|---|---|
+| Aluno | UC01 Liberar o áudio · UC02 Escolher o jogador · UC03 Assistir à abertura · UC04 Jogar a Fase 1 · UC05 Jogar a Fase 2 · UC06 Ouvir de novo · UC07 Ver o encerramento |
+| Professora | UC08 Entrar com senha · UC09 Gerenciar alunos · UC10 Consultar Relatório 1 · UC11 Consultar Relatório 2 · UC12 Fazer backup dos dados |
+| Sistema | UC13 Registrar resultado (incluído por UC04 e UC05) |
+
+## Requisitos
+
+### Funcionais
+
+| Código | Requisito | Situação |
+|---|---|---|
+| RF01 | Liberar o áudio com um toque inicial (TOCAR PARA COMEÇAR) | Atendido |
+| RF02 | Escolher o jogador pela foto ou inicial; sem alunos, jogar como VISITANTE | Atendido |
+| RF03 | Abertura em 4 quadros narrados, com botão PULAR | Atendido |
+| RF04 | Fase 1: encher a cesta com a quantidade pedida, com a contagem falada | Atendido |
+| RF05 | Fase 2: escolher entre 2 opções em 5 situações, com nova tentativa no erro | Atendido |
+| RF06 | Repetir a última fala pelo botão OUVIR DE NOVO | Atendido |
+| RF07 | Dica após 10 s sem ação ou no 2º erro | Atendido |
+| RF08 | Registrar por rodada: erros, dica, acerto de primeira, tempo e data | Atendido |
+| RF09 | Área da professora com senha de 4 dígitos em teclado na tela | Atendido |
+| RF10 | Cadastrar e remover alunos, com foto opcional (200 × 200 px) | Atendido |
+| RF11 | Relatório 1: desempenho do aluno em uma partida, com impressão | Atendido |
+| RF12 | Relatório 2: evolução da turma, com impressão | Atendido |
+| RF13 | Exportar/importar JSON, carregar dados de exemplo e apagar tudo | Atendido |
+
+### Não funcionais
+
+| Código | Categoria | Requisito | Situação |
+|---|---|---|---|
+| RNF01 | Acessibilidade | Arial em CAIXA ALTA, mínimo 16 px; títulos e botões com 28 px ou mais | Atendido |
+| RNF02 | Acessibilidade | Itens com no mínimo 150 × 150 px; CONTINUAR com 300 × 90 px | Atendido |
+| RNF03 | Acessibilidade | No máximo 2 opções ou 6 itens por tela; palavra abaixo da imagem | Atendido |
+| RNF04 | Acessibilidade | Toda tela narrada (45 falas gravadas) e legendada; opções bloqueadas durante a fala | Atendido |
+| RNF05 | Usabilidade | Só clique ou toque, com proteção contra toque duplo (350 ms) | Atendido |
+| RNF06 | Usabilidade | Sem cronômetro, pontos negativos ou sustos | Atendido |
+| RNF07 | Portabilidade | Chrome ou Edge, computador e tablet, sem internet | Atendido |
+| RNF08 | Confiabilidade | Salvar após cada rodada | Atendido |
+| RNF09 | Segurança | Dados do aluno inseridos só como texto (sem `innerHTML`) | Atendido |
+| RNF10 | Segurança | Área da professora protegida por senha | Parcial (ver P1) |
+| RNF11 | Manutenibilidade | Conteúdo separado do código das telas (`data.js`) | Atendido |
+
+## Modelo de dados
+
+Chave `nmc_dados_v1` no `localStorage`:
+
+| Entidade | Campos |
+|---|---|
+| Aluno | `id`, `nome`, `foto`, `criadoEm` |
+| Partida | `id`, `alunoId`, `alunoNome`, `inicio`, `fim`, `registros[]` |
+| Registro | `fase`, `rodada`, `erros`, `usouDica`, `acertouPrimeira`, `tempoMs`, `dataHora` |
+
+## Testes
+
+Os testes são manuais, no Chrome e no Edge, em computador e tablet. O projeto não tem testes automatizados.
+
+| Código | Cenário | Resultado esperado |
+|---|---|---|
+| CT01 | Tocar em TOCAR PARA COMEÇAR | A tela inicial fala N01 e libera COMEÇAR depois da fala |
+| CT02 | Abrir "Quem vai jogar?" sem alunos | Aparece só o cartão VISITANTE |
+| CT03 | Fase 1, rodada 1: tocar em 2 pães | A cesta enche, toca o elogio N15 e surge CONTINUAR |
+| CT04 | Fase 1: tocar com a cesta cheia | Fala N13 e conta 1 erro |
+| CT05 | Fase 2: errar duas vezes | No 2º erro a opção certa pisca |
+| CT06 | Ficar 10 s sem tocar | A dica pisca e a instrução é repetida |
+| CT07 | Senha errada | Mensagem de senha incorreta e campo limpo |
+| CT08 | Jogar e abrir o Relatório 1 | 10 linhas (5 por fase) |
+| CT09 | Exportar, apagar tudo e importar | Os dados voltam como estavam |
+| CT10 | Imprimir o Relatório 2 | Só a tabela sai na impressão |
+
+## Problemas conhecidos
+
+| # | Problema | Onde |
+|---|---|---|
+| P1 | A senha da professora (`1234`) está fixa no código | `js/data.js` |
+
+Outras limitações:
+
+- Na Fase 1 o aluno não consegue errar a contagem: a cesta só aceita a quantidade pedida, e o único erro registrado é tocar com ela cheia.
+- JOGAR DE NOVO e SAIR fazem a mesma coisa (voltam ao início).
+- A partida é salva ao escolher o aluno; partidas abandonadas aparecem no Relatório 1 sem rodadas.
+- Na situação 1 da Fase 2, "2 pessoas" e "5 pratos" usam emojis no lugar de fotos.
+
+## Trabalhos futuros
+
+- Permitir que a professora troque a senha e guardá-la como hash, fora do código.
+- Na Fase 1, deixar o aluno decidir quando a cesta está completa, para medir a contagem de fato.
+- Trocar os emojis da situação 1 por fotos reais.
+- Aplicar os formulários ISO/IEC 25010 com alunos e professores da ASSARTE.
+- Criar testes automatizados para `calcularRelatorio1` e `calcularRelatorio2`.
 
 ## Riscos tratados no código
 
