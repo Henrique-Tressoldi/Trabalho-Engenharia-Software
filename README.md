@@ -3,6 +3,8 @@
 Jogo web acessível sobre **consumo consciente e desperdício de alimentos**, alinhado à **ODS 12.3** (reduzir pela metade o desperdício de alimentos).
 Trabalho da disciplina de Fundamentos de Engenharia de Software — **UTFPR, Equipe 4**.
 
+📄 **Documentação completa (padrão UTFPR):** [docs/Na-Medida-Certa_Documentacao.pdf](docs/Na-Medida-Certa_Documentacao.pdf) · [figuras e índice](docs/)
+
 **Público:** jovens e adultos (16+) com deficiência intelectual atendidos pela **ASSARTE**. O jogo é todo narrado, usa imagens com a palavra embaixo, poucas opções por tela e retorno sempre calmo.
 
 O jogador passa por duas fases:
